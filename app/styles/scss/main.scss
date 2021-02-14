@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.media-show {
+  display: none;
+}
+
+.header {
+  background: #284622;
+  height: 220px;
+  padding-top: 44px;
+  padding-left: 44px;
+  border-radius: 10px 10px 0 0;
+
+  &-block {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-column-gap: 44px;
+  }
+
+  &-photo {
+    border-radius: 10px;
+  }
+
+  &-title {
+    font-weight: bold;
+    font-size: 31px;
+    line-height: 140%;
+
+    color: white;
+  }
+}
+
+.main-content {
+  padding: 34px 44px 44px;
+}
+
+.link {
+  display: grid;
+  grid-template-columns: 180px 180px;
+  grid-column-gap: 27px;
+  justify-content: center;
+
+  &_button {
+    width: 180px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    padding: 14px 0;
+    background: #ff4c00;
+    box-shadow: 5px 6px 22px rgba(204, 61, 0, 0.24);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    margin: 0 auto;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &_text {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    padding: 14px 34px;
+    color: #ff4c00;
+    text-align: center;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+}
+
+.text-block {
+  padding: 40px 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+
+  color: #010514;
+}
+
+.lorem {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-row-gap: 24px;
+
+  &-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 24px;
+  }
+
+  &-block {
+    &_title {
+      font-size: 13px;
+      line-height: 130%;
+      color: #7e7e7e;
+      margin-bottom: 4px;
+    }
+
+    &_text {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 130%;
+      color: #031143;
+    }
+
+    &_flags {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 26px);
+      grid-column-gap: 8px;
+    }
+
+    &_rectangles {
+      display: grid;
+      grid-template-columns: repeat(4, 54px);
+      grid-gap: 8px 20px;
+
+      &_space {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.flag {
+  width: 26px;
+  border-radius: 2px;
+  filter: drop-shadow(1px 2px 5px rgba(138, 138, 138, 0.25));
+
+  &-part {
+    height: 6px;
+
+    &_top {
+      background: #f5f5f5;
+    }
+
+    &_middle {
+      background: #41479b;
+    }
+
+    &_bottom {
+      background: #ff4b55;
+    }
+  }
+}
+
+.rectangle {
+  height: 25px;
+  background: #c4c4c4;
+  border-radius: 2px;
+}
+
+@media (max-width: 560px) {
+  .media-show {
+    display: block;
+  }
+  .media-hidden {
+    display: none;
+  }
+  .header {
+    height: 300px;
+    padding: 20px;
+
+    &-block {
+      grid-template-columns: 60px auto;
+      grid-column-gap: 12px;
+    }
+
+    &-photo {
+      border-radius: 4px;
+    }
+
+    &-title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+  .main-content {
+    padding: 20px;
+    display: grid;
+    grid-template-areas: "text-block" "lorem" "link";
+  }
+  .text-block {
+    grid-area: text-block;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .lorem {
+    grid-area: lorem;
+    grid-template-areas: "big-container" "flags" "small-container" "rectangles";
+    grid-row-gap: 14px;
+    margin-bottom: 128px;
+
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-row-gap: 14px;
+
+      &_big {
+        grid-area: big-container;
+      }
+
+      &_flags {
+        grid-area: flags;
+      }
+
+      &_small {
+        grid-area: small-container;
+        grid-template-columns: 50% 50%;
+      }
+
+      &_rectangles {
+        grid-area: rectangles;
+      }
+    }
+
+    &-block {
+      &_title {
+        font-size: 10px;
+        line-height: 130%;
+      }
+
+      &_text {
+        font-size: 13px;
+        line-height: 130%;
+      }
+
+      &_rectangles {
+        grid-gap: 8px 15px;
+      }
+    }
+  }
+  .link {
+    grid-area: link;
+    grid-template-columns: 1fr;
+    margin-bottom: 21px;
+
+    &_text {
+      font-size: 13px;
+      line-height: 130%;
+      padding: 14px 0;
+    }
+  }
+}
